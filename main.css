@@ -1,18 +1,218 @@
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+* {
+  box-sizing: border-box;
 }
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+
+body {
+  font-family: 'Pretendard';
+}
+
+/* reset */
+body,
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.hidden {
+  overflow: hidden;
+  border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  /* for legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.slider-btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 30px;
+  text-indent: -999em;
+  background-image: url(./assets/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png);
+  background-size: 1.75rem;
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+  position: absolute;
+  top: calc(50% - 2.25rem);
+}
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 0 0.65rem;
+  border-bottom: 1px solid #e7e7e7;
+  z-index: 100;
+  overflow: hidden;
+  transition: 0.5s height;
+  background: #fff;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#logo {
+  padding-top: 1rem;
+}
+
+#logo img {
+  width: 20rem;
+}
+
+#gnb {
+  order: 3;
+  line-height: 6rem;
+  padding-right: 1rem;
+}
+
+#gnb a {
+  color: #818181;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+}
+
+#lnb {
+  width: 38rem;
+}
+
+#lnb>ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#lnb .lv1>li {
+  line-height: 6rem;
+}
+
+#lnb .lv1>li>a {
+  font-size: 1.1rem;
   font-weight: 600;
-  font-style: normal;
 }
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
+
+#lnb .lv2 {
+  padding-top: 1rem;
+}
+
+#lnb .lv2>li {
+  line-height: 3rem;
+}
+
+#lnb .lv2>li>a:hover {
+  color: #2E89C9;
+  /* color: #0055B8; */
+}
+
+#campaign {
+  margin-top: 6rem;
+  height: 30rem;
+  padding: 2rem 0;
+  background: url(./assets/bg.jpg) no-repeat center / cover;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+#campaign ul {
+  width: 300%;
+  display: flex;
+  justify-content: space-around;
+}
+#campaign ul li {
+  min-width: 30%;
+  height: 26rem;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.upper {
+  position: relative;
+  z-index: 5;
+}
+#campaign ul li h3 {
+  font-size: 2rem;
+  padding: 1rem 0 1rem;
+}
+#campaign ul li p {
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+}
+#campaign ul li a {
+  width: fit-content;
+  background-color: #0055b2;
+  border-radius: 20px;
+}
+#campaign ul li:nth-child(1) p:nth-of-type(2) {
+  font-size: 0.95rem;
+  order: 1;
+  margin-top: 12rem;
+}
+#campaign ul li:nth-child(1) img {
+  display: block;
+  position: absolute;
+  width: 25rem;
+  right: 5rem;
+}
+
+#campaign button:nth-of-type(1) {
+  left: 3%;
+}
+#campaign button:nth-of-type(2) {
+  background-image: url(./assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
+  right: 3%;
+}
+
+#metaphor ul {
+  display: flex;
+}
+
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 90%;
+  }
+
+  #logo img {
+    padding-top: 0.8rem;
+    width: 15rem;
+  }
+
+  #lnb {
+    width: 30rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 80%;
+  }
+  /* 네비게이션 메뉴 버튼으로 줄이기*/
 }

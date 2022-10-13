@@ -14,6 +14,9 @@
   <meta property="og:image" content="">
 
   <!-- Main css -->
+  <link rel="preload" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="./main.css">
   <!-- Main js -->
   <script src="./main.js" defer></script>
@@ -21,19 +24,17 @@
 
 <body>
   <header>
-    <h1><a href="/">실종아동전문센터</a></h1>
-    <nav class="gnb">
+    <h1 id="logo"><a href="/"><img src="./assets/logo.png" alt="실종전문센터 로고"></a></h1>
+    <nav id="gnb">
       <h2 class="hidden">로그인 및 언어변경 메뉴</h2>
-      <ul>
-        <li><a href="#">로그인</a></li>
-        <li><a href="#">English</a></li>
-      </ul>
+      <a href="#">로그인</a>
+      <a href="#">English</a>
     </nav>
-    <nav class="lnb">
+    <nav id="lnb">
       <h2 class="hidden">실종 아동 및 장애인 찾기 및 사이트 메인메뉴</h2>
-      <ul>
+      <ul class="lv1">
         <li><a href="#">실종아동/장애인 찾기</a>
-          <ul>
+          <ul class="lv2">
             <li><a href="#">우리아이찾기가이드</a></li>
             <li><a href="#">실종아동/장애인 찾기</a></li>
             <li><a href="#">제보하기</a></li>
@@ -41,21 +42,21 @@
           </ul>
         </li>
         <li><a href="#">실종지원정책</a>
-          <ul>
+          <ul class="lv2">
             <li><a href="#">실종아동 사진홍보</a></li>
             <li><a href="#">실종예방활동</a></li>
             <li><a href="#">협력기관</a></li>
           </ul>
         </li>
         <li><a href="#">정보마당</a>
-          <ul>
+          <ul class="lv2">
             <li><a href="#">공지사항</a></li>
             <li><a href="#">기관소식</a></li>
             <li><a href="#">보도자료</a></li>
           </ul>
         </li>
         <li><a href="#">기관소개</a>
-          <ul>
+          <ul class="lv2">
             <li><a href="#">사업 소개</a></li>
             <li><a href="#">연혁</a></li>
             <li><a href="#">조직도 및 주요 업무</a></li>
@@ -66,62 +67,60 @@
     </nav>
   </header>
   <main>
-    <section>
+    <section id="campaign">
       <h2 class="hidden">진행 중인 캠페인</h2>
-      <ul>
-        <li>
-          <h3>인공지능으로 찾아낸 그리운 얼굴</h3>
-          <p>AI 기술로 추정한 실종아동의 현재 모습을 기억해주세요.</p>
-          <p>해당 홍보 캠페인은 KB 금융그룹의 후원으로 진행됩니다.</p>
+      <ul id="camp-slider">
+        <li class="slide">
+          <h3 class="upper">인공지능으로 찾아낸 그리운 얼굴</h3>
+          <p class="upper">AI 기술로 추정한 실종아동의 현재 모습을 본 적 있다면, <strong>실종아동전문센터</strong>로 연락주세요. <br> 여러분의 관심이 가족을 다시 만나게 할 수 있습니다.</p>
+          <p class="upper">해당 홍보 캠페인은 KB 금융그룹의 후원으로 진행됩니다.</p>
           <img src="./assets/AIpic-1.jpg" alt="권순옥님의 현재 추정 모습">
         </li>
-        <li>
+        <li class="slide">
           <h3>등록하면 빨리찾는 지문사전등록제</h3>
           <p>안전드림 홈페이지 및 가까운 경찰관서에서 등록하세요!</p>
           <p>등록대상 18세 미만 아동, 지적 정신 장애인, 치매환자</p>
           <a href="https://www.safe182.go.kr/home/dic/dicaryBrowesWrap.do">등록하러가기</a>
         </li>
-        <li>
+        <li class="slide">
           <h3>우리아이 안전사고 예방하기</h3>
           <p>아동안전사고의 68.5%가 가정에서 발생하고 있습니다.</p>
           <p>아동안전지원단에서는 사이버교육 및 교육자료를 무료로 제공하고 있습니다.</p>
           <a href="https://childsafe.kohi.or.kr/index.do">아동안전사이버교육센터</a>
         </li>
       </ul>
-      <div>
-        <button>이전</button>
-        <button>다음</button>
-      </div>
+        <button id="camp-prev" class="slider-btn swiper-button-prev">이전</button>
+        <button id="camp-next" class="slider-btn swiper-button-next">다음</button>
     </section>
-    <section>
-      <h2>사이트 주요 메뉴 바로가기</h2>
+    <section id="metaphor">
+      <h2 class="hidden">사이트 주요 메뉴 바로가기</h2>
       <ul>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>실종자 검색하기</h3>
             <span>생년월일, 실종연도 및 키워드로 검색할 수 있습니다.</span>
           </a></li>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>실종자 제보하기</h3>
             <span>제보하기 및 제보하신 내용에 대해 확인을 하실 수 있습니다.</span>
           </a></li>
       </ul>
       <ul>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>아이찾기가이드</h3>
           </a></li>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>실종아동홍보</h3>
           </a></li>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>자주묻는질문</h3>
           </a></li>
         <li><a href="#">
-            <img src="./assets/metaphors.png" alt="검색하기 아이콘">
+            <img src="./assets/metaphors.png" alt="검색하기 아이콘" width="120">
             <h3>실종예방교육</h3>
           </a></li>
       </ul>
@@ -200,7 +199,8 @@
       <li><a href="#">이메일무단수집거부</a></li>
       <li><a href="#">개인정보처리방침 </a></li>
     </ul>
-    <address><span>서울특별시 종로구 삼봉로 71 G타워 6층</span><span>TEL : 02-777-0182</span><span>FAX : 02-6283-0698</span><span>시스템 문의 : 070-7487-0010</span></address>
+    <address><span>서울특별시 종로구 삼봉로 71 G타워 6층</span><span>TEL : 02-777-0182</span><span>FAX : 02-6283-0698</span><span>시스템
+        문의 : 070-7487-0010</span></address>
     <small>COPYRIGHT NATIONAL CENTER FOR MISSING CHIDREN ALL RIGHTS RESERVED</small>
   </footer>
 </body>
