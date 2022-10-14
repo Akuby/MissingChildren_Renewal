@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Pretendard';
+  background-color: #e7e7e7;
 }
 
 /* reset */
@@ -26,6 +27,16 @@ a {
   color: #000;
 }
 
+section {
+  margin: 0.75rem;
+  margin-bottom: 0;
+}
+
+.card-container li {
+  background-color: #fff;
+  border-radius: 1.2rem;
+}
+
 .hidden {
   overflow: hidden;
   border: 0;
@@ -36,6 +47,16 @@ a {
   /* for legacy browsers */
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+.sm {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.gray {
+  color: #818181;
+}
+
 .slider-btn {
   cursor: pointer;
   background-color: #fff;
@@ -48,10 +69,11 @@ a {
   background-size: 1.75rem;
   background-repeat: no-repeat;
   background-position: 1rem;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: calc(50% - 2.25rem);
 }
+
 header {
   position: absolute;
   top: 0;
@@ -130,6 +152,8 @@ header::after {
 }
 
 #campaign {
+  margin: 0;
+  border-radius: 0;
   margin-top: 6rem;
   height: 30rem;
   padding: 2rem 0;
@@ -138,47 +162,59 @@ header::after {
   overflow: hidden;
   transition: 1s;
 }
+
 #campaign ul {
-  width: 300%;
   display: flex;
   justify-content: space-around;
+  width: 300%;
 }
+
 #campaign ul li {
-  min-width: 30%;
+  width: 85vw;
   height: 26rem;
   padding: 3rem 2rem;
   background-color: #fff;
   border-radius: 30px;
-  box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.25);
   position: relative;
+  overflow: hidden;
 }
+
+#campaign ul li:has(img) {
+  display: flex;
+  justify-content: space-between;
+}
+
 .upper {
   position: relative;
   z-index: 5;
 }
+
 #campaign ul li h3 {
   font-size: 2rem;
   padding: 1rem 0 1rem;
 }
+
 #campaign ul li p {
   font-size: 1.2rem;
   line-height: 1.75rem;
 }
+
 #campaign ul li a {
   width: fit-content;
   background-color: #0055b2;
   border-radius: 20px;
 }
-#campaign ul li:nth-child(1) p:nth-of-type(2) {
+
+#campaign ul li:has(img) p:nth-of-type(2) {
   font-size: 0.95rem;
   order: 1;
-  margin-top: 12rem;
+  position: absolute;
+  bottom: 0;
 }
+
 #campaign ul li:nth-child(1) img {
   display: block;
-  position: absolute;
   width: 25rem;
   right: 5rem;
 }
@@ -186,14 +222,129 @@ header::after {
 #campaign button:nth-of-type(1) {
   left: 3%;
 }
+
 #campaign button:nth-of-type(2) {
   background-image: url(./assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
   right: 3%;
 }
 
+#metaphor {
+  display: flex;
+  flex-direction: column;
+}
+
 #metaphor ul {
   display: flex;
+  justify-content: space-between;
 }
+
+#metaphor ul li {
+  position: relative;
+}
+
+#metaphor ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#metaphor ul li a h3 {
+  font-weight: 600;
+}
+
+/* 메타포 아이콘 관련 설정*/
+#metaphor ul li a h3::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: url(./assets/metaphors.png) no-repeat top left / 300%;
+}
+
+.metaphor-firstrow li a h3::before {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  left: 1.5rem;
+}
+.metaphor-lastrow li a h3::before {
+  margin-bottom: 1rem;
+}
+
+.metaphor-firstrow li {
+  width: 49.5%;
+  height: 6rem;
+}
+
+.metaphor-firstrow li a div {
+  margin-left: 4.5rem;
+}
+
+#metaphor .metaphor-firstrow li:nth-of-type(2) a h3::before {
+  background-position: top left 50%;
+}
+
+#metaphor .metaphor-lastrow li:nth-of-type(1) a h3::before {
+  background-position: bottom left;
+}
+
+#metaphor .metaphor-lastrow li:nth-of-type(2) a h3::before {
+  background-position: top right;
+}
+
+#metaphor .metaphor-lastrow li:nth-of-type(3) a h3::before {
+  background-position: bottom left 50%;
+}
+
+#metaphor .metaphor-lastrow li:nth-of-type(4) a h3::before {
+  background-position: top right;
+}
+
+.metaphor-lastrow {
+  margin-top: 0.75rem;
+}
+
+.metaphor-lastrow li {
+  width: 24.25%;
+  height: 10rem;
+}
+
+.metaphor-lastrow li a {
+  justify-content: center;
+}
+
+.metaphor-lastrow h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#missing-people {
+  margin-top: 2rem;
+  position: relative;
+}
+
+#missing-people h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin: 1rem 0;
+}
+
+#miss-slider {
+  display: flex;
+  width: 100%;
+}
+#miss-slider li {
+  margin-right: 1rem;
+}
+#miss-slider a {
+  display: block;
+  width: 12rem;
+  height:17rem;
+}
+
 
 
 @media screen and (max-width: 1200px) {
@@ -210,9 +361,11 @@ header::after {
     width: 30rem;
   }
 }
+
 @media screen and (max-width: 800px) {
   html {
-    font-size: 80%;
+    font-size: 70%;
   }
+
   /* 네비게이션 메뉴 버튼으로 줄이기*/
 }
