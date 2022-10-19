@@ -1,12 +1,22 @@
-const menu = document.querySelector('#lnb');
+const menu = document.getElementById('lnb');
 const nav = document.querySelector('header');
 // 네비게이션
-menu.addEventListener('mouseenter', function () {
+let menuRollDown = menu.addEventListener('mouseenter', function () {
   nav.style.height = '20rem';
 });
-menu.addEventListener('mouseleave', function () {
+let menuRollUp = menu.addEventListener('mouseleave', function () {
   nav.style.height = '6rem';
 })
+
+function resize() {
+  console.log('resized')
+}
+
+$(window).on('resize', function() {
+  if($(window).innerWidth() <= 768) {
+    resize();
+  }
+});
 
 // // 캠페인 슬라이더 in js
 // const campNextBtn = document.querySelector('#camp-next');

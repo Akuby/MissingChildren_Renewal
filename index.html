@@ -24,8 +24,10 @@
 </head>
 
 <body>
+  <!-- 768 미만시 header에 클래서 min 붙임 -->
   <header>
-    <h1 id="logo"><a href="/"><img src="./assets/logo.png" alt="실종전문센터 로고"></a></h1>
+    <h1 id="logo"><a href="/"><img id="logo-img" src="./assets/logo.png" alt="실종전문센터 로고"></a></h1>
+    <button id="navi-show"><span class="inline-hidden">메뉴</span></button>
     <nav id="gnb">
       <h2 class="hidden">로그인 및 언어변경 메뉴</h2>
       <a href="#">로그인</a>
@@ -70,7 +72,7 @@
   <main>
     <section id="campaign">
       <h2 class="hidden">진행 중인 캠페인</h2>
-      <ul id="camp-slider">
+      <ul id="camp-slider" class="card-container">
         <li class="slide">
           <div class="upper">
             <h3>인공지능으로 찾아낸 그리운 얼굴</h3>
@@ -92,108 +94,121 @@
           <a href="https://childsafe.kohi.or.kr/index.do">아동안전사이버교육센터</a>
         </li>
       </ul>
-      <button id="camp-prev" class="slider-btn swiper-button-prev">이전</button>
-      <button id="camp-next" class="slider-btn swiper-button-next">다음</button>
+      <button id="camp-prev" class="slider-btn"><span class="inline-hidden">이전</span></button>
+      <button id="camp-next" class="slider-btn"><span class="inline-hidden">다음</span></button>
     </section>
     <section id="metaphor">
-      <h2 class="hidden">사이트 주요 메뉴 바로가기</h2>
-      <ul class="metaphor-firstrow card-container">
-        <li><a href="#">
-            <div>
-              <h3>실종자 검색하기</h3>
-              <span class="sm gray">생년월일, 실종연도 및 키워드로 검색할 수 있습니다.</span>
-            </div>
-          </a></li>
-        <li><a href="#">
-            <div>
-              <h3>실종자 제보하기</h3>
-              <span class="sm gray">제보하기 및 제보하신 내용에 대해 확인을 하실 수 있습니다.</span>
-            </div>
-          </a></li>
-      </ul>
-      <ul class="metaphor-lastrow card-container">
-        <li><a href="#">
-            <h3>아이찾기가이드</h3>
-          </a></li>
-        <li><a href="#">
-            <h3>실종아동홍보</h3>
-          </a></li>
-        <li><a href="#">
-            <h3>자주묻는질문</h3>
-          </a></li>
-        <li><a href="#">
-            <h3>실종예방교육</h3>
-          </a></li>
-      </ul>
+      <div class="wrap">
+        <h2 class="hidden">사이트 주요 메뉴 바로가기</h2>
+        <ul class="metaphor-firstrow">
+          <li><a href="#">
+              <div>
+                <h3>실종자 검색하기</h3>
+                <span class="sm gray">생년월일, 실종연도 및 키워드로 검색할 수 있습니다.</span>
+              </div>
+            </a></li>
+          <li><a href="#">
+              <div>
+                <h3>실종자 제보하기</h3>
+                <span class="sm gray">제보하기 및 제보하신 내용에 대해 확인을 하실 수 있습니다.</span>
+              </div>
+            </a></li>
+        </ul>
+        <ul class="metaphor-lastrow">
+          <li><a href="#">
+              <h3>아이찾기가이드</h3>
+            </a></li>
+          <li><a href="#">
+              <h3>실종아동홍보</h3>
+            </a></li>
+          <li><a href="#">
+              <h3>자주묻는질문</h3>
+            </a></li>
+          <li><a href="#">
+              <h3>실종예방교육</h3>
+            </a></li>
+        </ul>
+      </div>
     </section>
     <section id="missing-people">
-      <h2>실종아동 / 장애인 찾기</h2>
-      <ul id="miss-slider" class="card-container">
-        <li><a href="#">
-            <p>박근혁 <span>(남, 현 39세)</span></p>
-          </a></li>
-        <li><a href="#">
-            <p>이동가 <span>(남, 현 36세)</span></p>
-          </a></li>
-        <li><a href="#">
-            <p>윤서경 <span>(여, 현 9세)</span></p>
-          </a></li>
-        <li><a href="#">
-            <p>강선미 <span>(여, 현 52세)</span></p>
-          </a></li>
-        <li><a href="#">
-            <p>이다은 <span>(여, 현 34세)</span></p>
-          </a></li>
-        <li><a href="#">
-            <p>김일형 <span>(남, 현 20세)</span></p>
-          </a></li>
-      </ul>
-      <button id="miss-prev" class="slider-btn">이전</button>
-      <button id="miss-next" class="slider-btn">다음</button>
-      <span class="slide-end sm gray">더 보기</span>
-    </section>
-    <section>
-      <!--게시판 내 게시글(article)들을 모아놓은 곳은 article 인가 section인가.. -->
-      <h2>공지사항</h2>
-      <!--has 써서 새로운 게시글 있으면 span으로 new 붙여주기-->
-      <ul>
-        <li><a href="#">실종아동 발견을 위한 개인정보 제3자 제공사항 알림 <span>2021-10-18</span></a></li>
-        <li><a href="#">2020년 실종아동 찾기 및 예방 홍보공모지원 사업 선정기관 안내 <span>2020-07-14</span></a></li>
-        <li><a href="#">2020 실종예방교육 강사 양성교육 모집(신규교육) <span>2020-02-26</span></a></li>
-        <li><a href="#">「실종아동 찾기·예방 공모전」입상자 발표 <span>2019-10-02</span></a></li>
-        <li><a href="#">실종아동 대국민 인식제고를 위한 ‘실종아동 찾기·실종예방 홍보’ 동영상 공모전 <span>2019-07-31</span></a></li>
-      </ul>
-      <a href="#">공지사항 더 보기</a>
-    </section>
-    <section>
-      <h2>보도자료</h2>
-      <ul>
-        <li><a href="#">[KBS아침뉴스타임]10년 이상 장기실종 아동 600명 가까이…끝나지 않는 고통 <span>2020-05-12</span></a></li>
-        <li><a href="#">[파이낸셜뉴스]"학대받던 아들 두고 온 게 恨… 생사만 확인했으면" <span>2020-05-12</span></a></li>
-        <li><a href="#">[파이낸셜뉴스]"36년전 잃어버린 아들, 버림받았다 생각하지 않길" <span>2020-05-12</span></a></li>
-        <li><a href="#">[충북일보]유전자 정보 이용해 48년 전 헤어진 모자(母子) 만나게 한 경찰</a> <span>2020-03-24</span></li>
-        <li><a href="#">[연합뉴스]美입양한인 "엄마, 비록 만난 적은 없지만 그리워요"</a> <span>2020-02-12</span></li>
-      </ul>
-      <a href="#">보도자료 더 보기</a>
-    </section>
-    <section>
-      <h2>협력기관</h2>
-      <ul class="card-container">
-        <li><a href="#">아동권리보장원</a></li>
-        <li><a href="#">보건복지부</a></li>
-        <li><a href="#">경찰청</a></li>
-        <li><a href="#">실종아동찾기협회</a></li>
-        <li><a href="#">국제실종아동센터</a></li>
-        <li><a href="#">사단법인 해외입양인연대</a></li>
-        <li><a href="#">한국산업인력공단</a></li>
-        <li><a href="#">교통안전공단</a></li>
-        <li><a href="#">계양구시설관리공단</a></li>
-        <li><a href="#">한국전기안전공사</a></li>
-      </ul>
-      <div>
-        <button>이전</button>
-        <button>다음</button>
+      <div class="wrap special-slider-wrap">
+        <h2>실종아동 / 장애인 찾기</h2>
+        <ul id="miss-slider" class="card-container">
+          <li><a href="#">
+              <p>박근혁 <span>(남, 현 39세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>이동가 <span>(남, 현 36세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>윤서경 <span>(여, 현 9세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>강선미 <span>(여, 현 52세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>이다은 <span>(여, 현 34세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>김일형 <span>(남, 현 20세)</span></p>
+            </a></li>
+            <li><a href="#">
+              <p>최민석 <span>(남, 현 35세)</span></p>
+            </a></li>
+            <li><a href="#">
+              <p>김경춘 <span>(남, 현 69세)</span></p>
+            </a></li>
+        </ul>
+        <!-- 버튼이 disabled 된 경우에 background 투명도 조절하고 배경색도 회색으로 주기-->
+        <button id="miss-prev" class="slider-btn-sm btn-hide"><span class="inline-hidden">이전</span></button>
+        <button id="miss-next" class="slider-btn-sm"><span class="inline-hidden">다음</span></button>
+        <!-- 마지막 슬라이더 노출 시, miss-next에 클래스 붙여서 나타내기 -->
+        <!-- <span class="slide-end sm gray">더 보기</span> -->
       </div>
+    </section>
+    <section class="boards wrap">
+      <h2 class="hidden">공지사항 및 관련 보도자료</h2>
+      <article>
+        <!--게시판 내 게시글(article)들을 모아놓은 곳은 article 인가 article인가.. -->
+        <h3><a href="#">공지사항</a></h3>
+        <!--has 써서 새로운 게시글 있으면 span으로 new 붙여주기-->
+        <ul>
+          <li><a href="#"><span>실종아동 발견을 위한 개인정보 제3자 제공사항 알림</span><span>2021-10-18</span></a></li>
+          <li><a href="#"><span>2020년 실종아동 찾기 및 예방 홍보공모지원 사업 선정기관 안내</span><span>2020-07-14</span></a></li>
+          <li><a href="#"><span>2020 실종예방교육 강사 양성교육 모집(신규교육)</span><span>2020-02-26</span></a></li>
+          <li><a href="#"><span>「실종아동 찾기·예방 공모전」입상자 발표</span><span>2019-10-02</span></a></li>
+          <li><a href="#"><span>실종아동 대국민 인식제고를 위한 ‘실종아동 찾기·실종예방 홍보’ 동영상 공모전</span><span>2019-07-31</span></a></li>
+        </ul>
+        <a href="#" class="sm gray">더 보기 &#8594;</a>
+      </article>
+      <article>
+        <h3><a href="#">보도자료</a></h3>
+        <ul>
+          <li><a href="#"><span>[KBS아침뉴스타임]10년 이상 장기실종 아동 600명 가까이…끝나지 않는 고통</span><span>2020-05-12</span></a></li>
+          <li><a href="#"><span>[파이낸셜뉴스]"학대받던 아들 두고 온 게 恨… 생사만 확인했으면"</span><span>2020-05-12</span></a></li>
+          <li><a href="#"><span>[파이낸셜뉴스]"36년전 잃어버린 아들, 버림받았다 생각하지 않길"</span><span>2020-05-12</span></a></li>
+          <li><a href="#"><span>[충북일보]유전자 정보 이용해 48년 전 헤어진 모자(母子) 만나게 한 경찰</span><span>2020-03-24</span></a></li>
+          <li><a href="#"><span>[연합뉴스]美입양한인 "엄마, 비록 만난 적은 없지만 그리워요"</span><span>2020-02-12</span></a></li>
+        </ul>
+        <a href="#" class="sm gray">더 보기 &#8594;</a>
+      </article>
+    </section>
+    <section class="cooperate wrap">
+      <h2 class="hidden">협력기관</h2>
+      <ul class="card-container">
+        <li><a href="#"><span class="inline-hidden">아동권리보장원</span></a></li>
+        <li><a href="#"><span class="inline-hidden">보건복지부</span></a></li>
+        <li><a href="#"><span class="inline-hidden">경찰청</span></a></li>
+        <li><a href="#"><span class="inline-hidden">실종아동찾기협회</span></a></li>
+        <li><a href="#"><span class="inline-hidden">국제실종아동센터</span></a></li>
+        <li><a href="#"><span class="inline-hidden">사단법인 해외입양인연대</span></a></li>
+        <li><a href="#"><span class="inline-hidden">한국산업인력공단</span></a></li>
+        <li><a href="#"><span class="inline-hidden">교통안전공단</span></a></li>
+        <li><a href="#"><span class="inline-hidden">계양구시설관리공단</span></a></li>
+        <li><a href="#"><span class="inline-hidden">한국전기안전공사</span></a></li>
+      </ul>
+      <button id="coop-prev" class="slider-btn-sm"><span class="inline-hidden">이전</span></button>
+      <button id="coop-next" class="slider-btn-sm"><span class="inline-hidden">다음</span></button>
     </section>
   </main>
   <footer>
