@@ -14,8 +14,8 @@
   <meta property="og:image" content="">
 
   <!-- Main css -->
-  <link rel="preload" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
+    rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="./main.css">
   <!-- Main js -->
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <!-- 768 미만시 header에 클래서 min 붙임 -->
+  <!-- 768 미만시 header에 클래스 min 붙임 -->
   <header>
     <h1 id="logo"><a href="/"><img id="logo-img" src="./assets/logo.png" alt="실종전문센터 로고"></a></h1>
     <button id="navi-show"><span class="inline-hidden">메뉴</span></button>
@@ -61,8 +61,8 @@
         <li><a href="#">기관소개</a>
           <ul class="lv2">
             <li><a href="#">사업 소개</a></li>
-            <li><a href="#">연혁</a></li>
-            <li><a href="#">조직도 및 주요 업무</a></li>
+            <li><a href="#">기관 연혁</a></li>
+            <li><a href="#">기관 조직도</a></li>
             <li><a href="#">찾아오시는 길</a></li>
           </ul>
         </li>
@@ -82,16 +82,22 @@
           <img src="./assets/AIpic-1.jpg" alt="권순옥님의 현재 추정 모습">
         </li>
         <li class="slide">
-          <h3>등록하면 빨리찾는 지문사전등록제</h3>
-          <p>안전드림 홈페이지 및 가까운 경찰관서에서 등록하세요!</p>
-          <p>등록대상 18세 미만 아동, 지적 정신 장애인, 치매환자</p>
-          <a href="https://www.safe182.go.kr/home/dic/dicaryBrowesWrap.do">등록하러가기</a>
+          <div class="upper">
+            <h3>등록하면 빨리찾는 지문사전등록제</h3>
+            <p>소중한 가족을 위해 미리 지문등록 하고 실종 예방하세요!</p>
+            <p>등록대상 | 18세 미만 아동, 지적 정신 장애인, 치매환자<br>등록방법 | 안전드림 홈페이지 및 가까운 경찰관서에서 등록하세요.</p>
+            <a href="https://www.safe182.go.kr/home/dic/dicaryBrowesWrap.do">등록하러가기</a>
+          </div>
+          <img src="./assets/2.png" alt="지문사전등록제 안내 일러스트">
         </li>
         <li class="slide">
-          <h3>우리아이 안전사고 예방하기</h3>
-          <p>아동안전사고의 68.5%가 가정에서 발생하고 있습니다.</p>
-          <p>아동안전지원단에서는 사이버교육 및 교육자료를 무료로 제공하고 있습니다.</p>
-          <a href="https://childsafe.kohi.or.kr/index.do">아동안전사이버교육센터</a>
+          <div class="upper">
+            <h3>우리아이 안전사고 예방하기</h3>
+            <p>아동안전사고의 68.5%가 가정에서 발생하고 있습니다.</p>
+            <p>아동안전지원단에서는 사이버교육 및 교육자료를 무료로 제공하고 있습니다.</p>
+            <a href="https://childsafe.kohi.or.kr/index.do">아동안전사이버교육센터</a>
+          </div>
+          <img src="./assets/3.png" alt="안전교육센터 안내 일러스트">
         </li>
       </ul>
       <button id="camp-prev" class="slider-btn"><span class="inline-hidden">이전</span></button>
@@ -131,7 +137,7 @@
       </div>
     </section>
     <section id="missing-people">
-      <div class="wrap special-slider-wrap">
+      <div class="wrap">
         <h2>실종아동 / 장애인 찾기</h2>
         <ul id="miss-slider" class="card-container">
           <li><a href="#">
@@ -152,11 +158,23 @@
           <li><a href="#">
               <p>김일형 <span>(남, 현 20세)</span></p>
             </a></li>
-            <li><a href="#">
+          <li><a href="#">
               <p>최민석 <span>(남, 현 35세)</span></p>
             </a></li>
-            <li><a href="#">
+          <li><a href="#">
               <p>김경춘 <span>(남, 현 69세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>송윤선 <span>(여, 현 32세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>안현수 <span>(남, 현 45세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>박시성 <span>(남, 현 51세)</span></p>
+            </a></li>
+          <li><a href="#">
+              <p>조수민 <span>(남, 현 36세)</span></p>
             </a></li>
         </ul>
         <!-- 버튼이 disabled 된 경우에 background 투명도 조절하고 배경색도 회색으로 주기-->
@@ -195,7 +213,7 @@
     </section>
     <section class="cooperate wrap">
       <h2 class="hidden">협력기관</h2>
-      <ul class="card-container">
+      <ul id="coop-slider" class="card-container">
         <li><a href="#"><span class="inline-hidden">아동권리보장원</span></a></li>
         <li><a href="#"><span class="inline-hidden">보건복지부</span></a></li>
         <li><a href="#"><span class="inline-hidden">경찰청</span></a></li>
