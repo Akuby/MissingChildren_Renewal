@@ -312,6 +312,7 @@ header::after {
 
 #campaign ul li {
   width: 82vw;
+  min-width: 1052px;
   height: 26rem;
   padding: 3rem 2rem;
   box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.25);
@@ -321,7 +322,9 @@ header::after {
   display: flex;
   justify-content: space-between;
 }
-
+#campaign ul .camp-content {
+  z-index: 5;
+}
 #campaign ul li h3 {
   font-size: 2rem;
   padding: 1rem 0 1rem;
@@ -348,20 +351,34 @@ header::after {
   margin-top: 1rem;
 }
 
+#campaign ul li .camp-img-container {
+  position: relative;
+  width: 26rem;
+  height: auto;
+}
+
+#campaign ul li .camp-img-container img {
+  position: absolute;
+  width: inherit;
+  height: auto;
+}
+#campaign ul li .camp-img-container img.active {
+  z-index: 5;
+}
 #campaign ul li img {
   display: block;
   height: 20rem;
 }
-#campaign ul li:nth-child(2) img {
-  height: 22rem;
-}
+
 #campaign.min {
   height: 39rem;
 }
+
 #campaign.min ul {
   align-items: initial;
 }
-#campaign.min ul .upper {
+
+#campaign.min ul .camp-content {
   order: 1;
   width: 80%;
   display: flex;
@@ -378,15 +395,19 @@ header::after {
   height: 34rem;
   padding: 1rem;
 }
+
 #campaign.min ul li h3 {
   font-size: 1.5rem;
 }
+
 #campaign.min ul li p {
   font-size: 1rem;
 }
+
 #campaign.min ul li img {
   margin-top: 0;
 }
+
 #campaign.min ul li a {
   margin-top: 1rem;
 }
@@ -606,15 +627,22 @@ header::after {
 .cooperate {
   margin-top: 1.75rem;
   position: relative;
+  height: 3.5rem;
 }
-
+.cooperate > div {
+  width: 100%;
+}
 .cooperate ul {
-  width: fit-content;
-  height: 4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cooperate ul li {
-  width: 11rem;
+  width: 10.5rem;
+  min-width: 110px;
   height: 3.5rem;
   margin: 0 0.5rem;
   overflow: hidden;
@@ -625,6 +653,27 @@ header::after {
   width: 100%;
   height: 100%;
   background: #fff no-repeat center / cover;
+}
+
+.cooperate > button {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #2E89C9;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 0;
+  transition: background 0.5s;
+}
+.cooperate > button:first-of-type {
+  left: calc(50% - 1.2rem);
+}
+.cooperate > button:last-of-type {
+  left: calc(50% + 0.4rem);
+}
+.cooperate > button.on {
+  background-color: #2E89C9;
 }
 
 footer {
@@ -710,6 +759,19 @@ footer small {
   #gnb {
     padding-right: 0.5rem;
   }
+  #campaign ul li {
+    min-width: auto;
+  }
+  #campaign ul .camp-content {
+    width: 65%;
+  }
+  #campaign ul li .camp-img-container {
+    height: auto;
+    width: 20rem;
+  }
+  #campaign ul li .camp-img-container img {
+    top: calc(50% - 7rem);
+  }
   #campaign ul li img {
     height: 18rem;
   }
@@ -724,8 +786,12 @@ footer small {
   #lnb {
     width: 30rem;
   }
+  #campaign ul li .camp-img-container {
+    height: 18rem;
+    width: 18rem;
+  }
   #campaign ul li img {
-    height: 15rem !important;
+    height: 15rem;
   }
 }
 
@@ -764,9 +830,11 @@ footer small {
   section {
     margin: 0;
   }
+
   #campaign ul li p:nth-of-type(2) {
     margin-top: 0rem;
   }
+
   #metaphor ul {
     margin-top: 0.5rem;
   }
@@ -777,13 +845,6 @@ footer small {
 
   #missing-people {
     margin: 0.75rem;
-  }
-
-  .special-slider-wrap {
-    padding-left: 0;
-    margin-right: 0;
-    margin-left: 0;
-    width: 100%;
   }
 
   .boards {
@@ -811,15 +872,19 @@ footer small {
   html {
     font-size: 60%;
   }
+
   #metaphor .metaphor-firstrow span {
     display: none;
   }
+
   #metaphor .metaphor-firstrow li a {
     padding: 1.5rem
   }
+
   #metaphor .metaphor-lastrow li a {
     padding: 0.75rem;
   }
+
   #campaign ul li img {
     height: 12rem;
   }
