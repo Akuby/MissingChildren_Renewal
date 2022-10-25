@@ -1,10 +1,12 @@
 $(document).ready(function () {
   let resizeCount = 0
   let isMobile = 0;
-  let temp = 0;
-  let isMoving = 0;
   let missingperson = $('#miss-slider li').get();
   let cooperate = $('.coop-slider li a').get();
+  insertBg(missingperson, 'missingperson');
+  insertBg(cooperate, 'cooperate');
+  resize();
+  $(window).on('resize', resize);
 
 
   function insertBg(sliderName, folderName) {
@@ -24,14 +26,8 @@ $(document).ready(function () {
     }
   }
 
-  insertBg(missingperson, 'missingperson');
-  insertBg(cooperate, 'cooperate');
-  resize();
-  $(window).on('resize', resize);
-
-
   // 네비게이션
-  // debounce 적용하고 나서는 resize에 바로 넣기
+
   if (isMobile == 0) {
     $('#lnb').on('mouseenter', function () {
       $('header').css({
@@ -42,10 +38,36 @@ $(document).ready(function () {
         height: '6rem'
       })
     })
-  }
-  if (isMobile == 1) {
+
+    let campSwiper = new Swiper(".campSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 100,
+      direction: "vertical",
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      centeredSlides: true,
+    });
+
+  } else if (isMobile == 1) {
+
     $('#campaign').toggleClass('min');
+
+    let m_campSwiper = new Swiper(".campSwiper", {
+      slidesPerView: 1,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      centeredSlides: true,
+    });
   }
+
 
   // 모바일 화면에서 메뉴 아이콘 터치 시 네비게이션 화면 전환
   $('#navi-show').on('click', function () {
@@ -71,46 +93,13 @@ $(document).ready(function () {
   }, 5000);
 
   // 실종아동 슬라이더
+  let missSwiper = new Swiper(".missSwiper", {
+    slidesPerView: 5,
+    freeMode: true,
+    spaceBetween: 10
+  });
 
-  $('#camp-prev').hide();
-  $('#camp-next').on('click', function () {
-    if (isMoving == 0) {
-      isMoving = 1;
-      temp++;
-      if (temp >= $('#camp-slider').children().length - 1) {
-        $('#camp-next').fadeOut();
-      } else if (temp > 0) {
-        $('#camp-prev').fadeIn();
-      }
-      $('#camp-slider').stop().animate({
-        marginLeft: `${-100 * temp}%`
-      }, 500, function () {
-        isMoving = 0;
-      })
-    }
-  })
-  $('#camp-prev').on('click', function () {
-    if (isMoving == 0) {
-      isMoving = 1;
-      temp--;
-      if (temp == 0) {
-        $('#camp-prev').fadeOut();
-      } else if (temp < $('#camp-slider').children().length) {
-        $('#camp-next').fadeIn();
-      }
-      $('#camp-slider').stop().animate({
-        marginLeft: `${-100 * temp}%`
-      }, 500, function () {
-        isMoving = 0;
-      })
-    }
-  })
-  $('#miss-next').on('click', function () {
-    $('#miss-slider').animate({
-      marginLeft: '-100%'
-    }, 500)
-  })
-
+  // 협력기관 슬라이더
 
   let round = -3.5;
   let sliderTop, sliderHeight;
@@ -128,7 +117,7 @@ $(document).ready(function () {
       sliderTop = parseFloat($(this).css('marginTop')) * -1;
       sliderHeight = parseFloat($(this).css('height')) - parseFloat($(this).parent().css('height'));
 
-      // 두 값이 같다면, 현재 마지막 ul의 마지막 li가 노출되고 있음
+      // 두 값이 같을 때, 자리 정리
 
       if (parseInt(sliderTop) == parseInt(sliderHeight)) {
         $(this).children(':eq(0)').remove();
@@ -143,37 +132,4 @@ $(document).ready(function () {
       round -= 3.5;
     })
   }, 6000);
-
-  let cursorStart, finalPos = 0;
-  let isMouseDown = false;
-  // 모바일 터치 시험
-  $('#camp-slider').on('touchstart', function (e) {
-    console.log('clicked')
-    cursorStart = e.touches[0].clientX;
-    isMouseDown = true;
-  }).on('touchmove', function(e) {
-    if (isMouseDown) {
-      $(this).css('transform', `translateX(${e.touches[0].clientX - cursorStart}px)`)
-    }
-  }).on('touchend', function(e) {
-    isMouseDown = false;
-    if ( e.changedTouches[0].clientX - cursorStart < -100) {
-      $('#camp-slider').css('transition', 'all 0.5s').css('transform', 'translateX(-100vw)');
-    } else {
-      $('#camp-slider').css('transition', 'all 0.5s').css('transform', 'translateX(0vw)');
-    }
-    setTimeout(()=>{
-      $('#camp-slider').css('transition', 'none')
-    }, 500)
-  })
-
-
-  $('#miss-slider').on('mousedown', function () {
-    console.log('clicked!')
-  })
-
-
-
-
-
 });

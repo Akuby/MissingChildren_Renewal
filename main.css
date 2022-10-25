@@ -306,12 +306,13 @@ header::after {
 }
 
 #campaign ul {
+  flex-direction: column;
   justify-content: space-around;
-  width: 300%;
+  width: 100%;
 }
 
 #campaign ul li {
-  width: 82vw;
+  width: 88vw !important;
   min-width: 1052px;
   height: 26rem;
   padding: 3rem 2rem;
@@ -531,7 +532,7 @@ header::after {
 
 #miss-slider li {
   margin-right: 1rem;
-  width: 8.3%;
+  width: 10%;
   height: 100%;
   background: #818181 no-repeat top / cover;
   overflow: hidden;
@@ -551,7 +552,7 @@ header::after {
   width: 100%;
   bottom: 0;
   line-height: 3rem;
-  padding: 0 0.8rem;
+  padding: 0 0 0 0.7rem;
   font-weight: 600;
 }
 
@@ -742,7 +743,9 @@ footer small {
   html {
     font-size: 14px;
   }
-
+  .wrap {
+    width: 95%;
+  }
   #logo img {
     padding-top: 0.8rem;
     width: 15rem;
@@ -775,8 +778,17 @@ footer small {
   #campaign ul li img {
     height: 18rem;
   }
+  /* #miss-slider {
+    width: 250%;
+  } */
+  #miss-slider a p {
+    font-size: 1rem;
+  }
+  #miss-next {
+    right: 1rem;
+    margin-top: 1.5rem;
+  }
 }
-
 @media screen and (max-width: 850px) {
   #logo img {
     padding-top: 0.8rem;
@@ -792,6 +804,10 @@ footer small {
   }
   #campaign ul li img {
     height: 15rem;
+  }
+  
+  #camp-next, #camp-prev {
+    display: none;
   }
 }
 
@@ -813,6 +829,7 @@ footer small {
     display: none;
   }
 
+
   #logo img {
     padding-top: 0.4rem;
     width: 18rem;
@@ -830,7 +847,10 @@ footer small {
   section {
     margin: 0;
   }
-
+  #campaign ul {
+    flex-direction: row;
+    width: 300%;
+  }
   #campaign ul li p:nth-of-type(2) {
     margin-top: 0rem;
   }
