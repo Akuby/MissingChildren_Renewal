@@ -123,9 +123,11 @@ section {
   background-color: #fff;
   cursor: pointer;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #0055b2;
 }
+
 .btn-hide {
   display: none;
 }
@@ -916,15 +918,25 @@ footer small {
     text-align: center;
   }
 
+  .boards ul li a {
+    font-size: 1.2rem;
+  }
+
   .boards ul li a>span:first-child {
     max-width: 75%;
   }
+
+  footer ul li a {
+    font-size: 1.2rem;
+  }
 }
-@media screen and (max-width: 435px){
+
+@media screen and (max-width: 435px) {
   #miss-slider {
     width: 500%;
   }
 }
+
 @media screen and (max-width: 360px) {
   html {
     font-size: 60%;
