@@ -6,8 +6,6 @@ $(document).ready(function () {
   insertBg(missingperson, 'missingperson');
   insertBg(cooperate, 'cooperate');
   resize();
-  $(window).on('resize', resize);
-
 
   function insertBg(sliderName, folderName) {
     sliderName.forEach((el, idx) => {
@@ -18,7 +16,6 @@ $(document).ready(function () {
   }
 
   function resize() {
-    console.log('resized : ' + resizeCount++)
     if ($(window).innerWidth() <= 768) {
       isMobile = 1;
     } else {
@@ -26,9 +23,8 @@ $(document).ready(function () {
     }
   }
 
-  // 네비게이션
   if (isMobile == 0) {
-    console.log('PC')
+    // 네비게이션 드롭다운
     $('#lnb').on('mouseenter', function () {
       $('header').css({
         height: '20rem'
@@ -52,16 +48,21 @@ $(document).ready(function () {
         el: ".swiper-pagination",
         clickable: true,
       },
-      centeredSlides: true
+      centeredSlides: true,
+      a11y: {
+        containerRoleDescriptionMessage: '진행중인 캠페인 안내 슬라이드입니다.'
+      }
     });
     // 실종아동 슬라이더
     let missSwiper = new Swiper(".missSwiper", {
       slidesPerView: 5,
-      freeMode: true
+      freeMode: true,
+      a11y: {
+        containerRoleDescriptionMessage: '실종 아동 및 장애인 정보 슬라이드입니다.'
+      }
     });
 
   } else if (isMobile == 1) {
-    console.log('모바일')
     // 캠페인 슬라이더
     $('#campaign').toggleClass('min');
     let m_campSwiper = new Swiper(".campSwiper", {
@@ -71,10 +72,16 @@ $(document).ready(function () {
         disableOnInteraction: false,
       },
       centeredSlides: true,
+      a11y: {
+        containerRoleDescriptionMessage: '진행중인 캠페인 안내 슬라이드입니다.'
+      }
     });
     // 실종아동 슬라이더
     let m_missSwiper = new Swiper(".missSwiper", {
-      slidesPerView: 3
+      slidesPerView: 3,
+      a11y: {
+        containerRoleDescriptionMessage: '실종 아동 및 장애인 정보 슬라이드입니다.'
+      }
     });
   }
 
@@ -103,10 +110,7 @@ $(document).ready(function () {
   }, 3000);
 
 
-
-
   // 협력기관 슬라이더
-
   let round = -3.5;
   let sliderTop, sliderHeight;
   let nSlider = $('.cooperate div ul').eq(0).clone();
