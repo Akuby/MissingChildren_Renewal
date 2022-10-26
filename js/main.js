@@ -27,8 +27,8 @@ $(document).ready(function () {
   }
 
   // 네비게이션
-
   if (isMobile == 0) {
+    console.log('PC')
     $('#lnb').on('mouseenter', function () {
       $('header').css({
         height: '20rem'
@@ -39,6 +39,7 @@ $(document).ready(function () {
       })
     })
 
+    // 캠페인 슬라이더
     let campSwiper = new Swiper(".campSwiper", {
       slidesPerView: 1,
       spaceBetween: 100,
@@ -51,13 +52,18 @@ $(document).ready(function () {
         el: ".swiper-pagination",
         clickable: true,
       },
-      centeredSlides: true,
+      centeredSlides: true
+    });
+    // 실종아동 슬라이더
+    let missSwiper = new Swiper(".missSwiper", {
+      slidesPerView: 5,
+      freeMode: true
     });
 
   } else if (isMobile == 1) {
-
+    console.log('모바일')
+    // 캠페인 슬라이더
     $('#campaign').toggleClass('min');
-
     let m_campSwiper = new Swiper(".campSwiper", {
       slidesPerView: 1,
       autoplay: {
@@ -65,6 +71,10 @@ $(document).ready(function () {
         disableOnInteraction: false,
       },
       centeredSlides: true,
+    });
+    // 실종아동 슬라이더
+    let m_missSwiper = new Swiper(".missSwiper", {
+      slidesPerView: 3
     });
   }
 
@@ -92,12 +102,8 @@ $(document).ready(function () {
     })
   }, 3000);
 
-  // 실종아동 슬라이더
-  // 모바일 환경에선 slidesPerView 줄이기
-  let missSwiper = new Swiper(".missSwiper", {
-    slidesPerView: 5,
-    freeMode: true
-  });
+
+
 
   // 협력기관 슬라이더
 

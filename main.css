@@ -866,7 +866,9 @@ footer small {
   #missing-people {
     margin: 0.75rem;
   }
-
+  #miss-slider {
+    width: 500%;
+  }
   .boards {
     flex-direction: column;
   }
