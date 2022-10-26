@@ -515,8 +515,8 @@ header::after {
 }
 
 #missing-people {
-  margin: 1rem 0 2rem;
   position: relative;
+  overflow: hidden;
 }
 
 #missing-people h2 {
@@ -526,7 +526,7 @@ header::after {
 }
 
 #miss-slider {
-  width: 200%;
+  width: 300%;
   height: 19.5rem;
 }
 

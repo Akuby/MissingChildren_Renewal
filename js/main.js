@@ -90,13 +90,13 @@ $(document).ready(function () {
     }, 1000, function () {
       $('.camp-img-container').append($('.camp-img-container img:eq(0)')).children('img:last').removeClass('active');
     })
-  }, 5000);
+  }, 3000);
 
   // 실종아동 슬라이더
+  // 모바일 환경에선 slidesPerView 줄이기
   let missSwiper = new Swiper(".missSwiper", {
     slidesPerView: 5,
-    freeMode: true,
-    spaceBetween: 10
+    freeMode: true
   });
 
   // 협력기관 슬라이더
