@@ -98,7 +98,6 @@ $(document).ready(function () {
     });
   }
 
-
   // 모바일 화면에서 메뉴 아이콘 터치 시 네비게이션 화면 전환
   $('#navi-show').on('click', function () {
     if ($('header').hasClass('min')) { // 닫기
@@ -106,6 +105,7 @@ $(document).ready(function () {
         $('header').removeClass('min');
       });
     } else { // 열기
+      $(this).css({position: 'fixed'})
       $('header').addClass('min');
       $('#lnb, #gnb').hide().fadeIn(200);
     }
