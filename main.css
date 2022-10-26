@@ -81,48 +81,51 @@ section {
   color: #818181;
 }
 
-.slider-btn {
-  cursor: pointer;
-  border: 1px solid #e7e7e7;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 30px;
-  background: url(./assets/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png) no-repeat 0.75rem / 1.25rem;
-  background-color: #fff;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: calc(50% - 1.5rem);
-  left: 2rem;
-}
-
-.slider-btn:nth-of-type(2) {
-  background-image: url(./assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
-  background-position: 0.7rem;
-  left: auto;
-  right: 2rem;
-}
-
 .slider-btn-sm {
   cursor: pointer;
   border: 1px solid #e7e7e7;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 30px;
-  background: url(./assets/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png) no-repeat 0.75rem / 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: url(./assets/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png) no-repeat 0.75rem / 1.25rem;
   background-color: #fff;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: calc(50% - 1rem);
-  left: 2rem;
+  top: 1rem;
+  right: 4rem;
 }
 
 .slider-btn-sm:nth-of-type(2) {
   background-image: url(./assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48\ \(1\).png);
   background-position: 0.5rem;
   left: auto;
-  right: 4rem;
+  right: 1rem;
 }
 
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  height: 3rem;
+  transition: .3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  left: 1.25rem;
+  top: calc(50% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.swiper-pagination-bullet {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  clip-path: circle(50% at 50% 50%);
+  background-color: #fff;
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+  background-color: #0055b2;
+}
 .btn-hide {
   display: none;
 }
@@ -322,9 +325,11 @@ header::after {
   display: flex;
   justify-content: space-between;
 }
+
 #campaign ul .camp-content {
   z-index: 5;
 }
+
 #campaign ul li h3 {
   font-size: 2rem;
   padding: 1rem 0 1rem;
@@ -362,9 +367,11 @@ header::after {
   width: inherit;
   height: auto;
 }
+
 #campaign ul li .camp-img-container img.active {
   z-index: 5;
 }
+
 #campaign ul li img {
   display: block;
   height: 20rem;
@@ -629,9 +636,11 @@ header::after {
   position: relative;
   height: 3.5rem;
 }
-.cooperate > div {
+
+.cooperate>div {
   width: 100%;
 }
+
 .cooperate ul {
   width: 100%;
   height: 100%;
@@ -655,7 +664,7 @@ header::after {
   background: #fff no-repeat center / cover;
 }
 
-.cooperate > button {
+.cooperate>button {
   cursor: pointer;
   background-color: #fff;
   border: 1px solid #2E89C9;
@@ -666,13 +675,16 @@ header::after {
   bottom: 0;
   transition: background 0.5s;
 }
-.cooperate > button:first-of-type {
+
+.cooperate>button:first-of-type {
   left: calc(50% - 1.2rem);
 }
-.cooperate > button:last-of-type {
+
+.cooperate>button:last-of-type {
   left: calc(50% + 0.4rem);
 }
-.cooperate > button.on {
+
+.cooperate>button.on {
   background-color: #2E89C9;
 }
 
@@ -742,9 +754,11 @@ footer small {
   html {
     font-size: 14px;
   }
+
   .wrap {
     width: 95%;
   }
+
   #logo img {
     padding-top: 0.8rem;
     width: 15rem;
@@ -761,33 +775,41 @@ footer small {
   #gnb {
     padding-right: 0.5rem;
   }
+
   #campaign ul li {
     min-width: auto;
   }
+
   #campaign ul .camp-content {
     width: 65%;
   }
+
   #campaign ul li .camp-img-container {
     height: auto;
     width: 20rem;
   }
+
   #campaign ul li .camp-img-container img {
     top: calc(50% - 7rem);
   }
+
   #campaign ul li img {
     height: 18rem;
   }
+
   /* #miss-slider {
     width: 250%;
   } */
   #miss-slider a p {
     font-size: 1rem;
   }
+
   #miss-next {
     right: 1rem;
     margin-top: 1.5rem;
   }
 }
+
 @media screen and (max-width: 850px) {
   #logo img {
     padding-top: 0.8rem;
@@ -797,15 +819,18 @@ footer small {
   #lnb {
     width: 30rem;
   }
+
   #campaign ul li .camp-img-container {
     height: 18rem;
     width: 18rem;
   }
+
   #campaign ul li img {
     height: 15rem;
   }
-  
-  #camp-next, #camp-prev {
+
+  #camp-next,
+  #camp-prev {
     display: none;
   }
 }
@@ -828,7 +853,6 @@ footer small {
     display: none;
   }
 
-
   #logo img {
     padding-top: 0.4rem;
     width: 18rem;
@@ -846,10 +870,12 @@ footer small {
   section {
     margin: 0;
   }
+
   #campaign ul {
     flex-direction: row;
     width: 300%;
   }
+
   #campaign ul li p:nth-of-type(2) {
     margin-top: 0rem;
   }
@@ -857,6 +883,7 @@ footer small {
   #metaphor ul {
     margin-top: 0.5rem;
   }
+
   #metaphor ul li a h3 {
     font-size: 1.1rem;
   }
@@ -864,13 +891,15 @@ footer small {
   #metaphor ul:nth-child(2) li a h3 {
     font-size: 1.25rem;
   }
-  
+
   #missing-people {
     margin: 0.75rem;
   }
+
   #miss-slider {
-    width: 500%;
+    width: 375%;
   }
+
   .boards {
     flex-direction: column;
   }
@@ -891,7 +920,11 @@ footer small {
     max-width: 75%;
   }
 }
-
+@media screen and (max-width: 435px){
+  #miss-slider {
+    width: 500%;
+  }
+}
 @media screen and (max-width: 360px) {
   html {
     font-size: 60%;

@@ -56,7 +56,10 @@ $(document).ready(function () {
     // 실종아동 슬라이더
     let missSwiper = new Swiper(".missSwiper", {
       slidesPerView: 5,
-      freeMode: true,
+      navigation: {
+        nextEl: '.swiper-btn-next',
+        prevEl: '.swiper-btn-prev',
+      },
       a11y: {
         containerRoleDescriptionMessage: '실종 아동 및 장애인 정보 슬라이드입니다.'
       }
@@ -81,6 +84,16 @@ $(document).ready(function () {
       slidesPerView: 3,
       a11y: {
         containerRoleDescriptionMessage: '실종 아동 및 장애인 정보 슬라이드입니다.'
+      },
+      breakpoints: {
+        // when window width is >= 435px
+        435: {
+          slidesPerView: 4
+        },
+        // when window width is >= 1200px
+        1200: {
+          slidesPerView: 5
+        }
       }
     });
   }
