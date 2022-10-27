@@ -1,3 +1,11 @@
+@charset "utf-8";
+
+:root {
+  --main-color: #0055b2;
+  --sub-color: #2E89C9;
+  --text-sm-color: #e7e7e7;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -83,7 +91,7 @@ section {
 
 .slider-btn-sm {
   cursor: pointer;
-  border: 1px solid #e7e7e7;
+  border: 1px solid var(--text-sm-color);
   width: 2.25rem;
   height: 2.25rem;
   background: url(./assets/arrow_back_ios_FILL0_wght400_GRAD0_opsz48.png) no-repeat 0.75rem / 1.25rem;
@@ -108,7 +116,7 @@ section {
   transition: .3s opacity;
   transform: translate3d(0, 0, 0);
   z-index: 10;
-  left: 1.25rem;
+  right: 1.25rem;
   top: calc(50% - 1.5rem);
   display: flex;
   flex-direction: column;
@@ -125,7 +133,7 @@ section {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #0055b2;
+  background-color: var(--main-color);
 }
 
 .btn-hide {
@@ -205,8 +213,8 @@ section {
   width: 4rem;
   line-height: 4rem;
   font-size: 1rem;
-  border: 1px solid #0055b2;
-  color: #0055b2;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   padding: 0;
   margin: 0.5rem 0;
   text-align: center;
@@ -226,7 +234,7 @@ header {
   justify-content: space-between;
   padding: 0 0.65rem;
   padding-right: 10rem;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid var(--text-sm-color);
   z-index: 100;
   overflow: hidden;
   transition: 0.5s height;
@@ -239,7 +247,7 @@ header::after {
   top: 6rem;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid var(--text-sm-color);
 }
 
 #logo {
@@ -293,7 +301,7 @@ header::after {
 }
 
 #lnb .lv2>li>a:hover {
-  color: #2E89C9;
+  color: var(--sub-color);
 }
 
 /* campaign */
@@ -345,7 +353,7 @@ header::after {
 #campaign ul li a {
   display: block;
   width: fit-content;
-  background-color: #0055b2;
+  background-color: var(--main-color);
   border-radius: 0.5rem;
   color: #fff;
   padding: 1rem 1.25rem;
@@ -421,9 +429,7 @@ header::after {
   margin-top: 1rem;
 }
 
-
 /* metaphor */
-
 
 #metaphor {
   display: flex;
@@ -597,7 +603,7 @@ header::after {
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid var(--text-sm-color);
 }
 
 .boards ul {
@@ -669,7 +675,7 @@ header::after {
 .cooperate>button {
   cursor: pointer;
   background-color: #fff;
-  border: 1px solid #2E89C9;
+  border: 1px solid var(--sub-color);
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 0.4rem;
@@ -687,7 +693,7 @@ header::after {
 }
 
 .cooperate>button.on {
-  background-color: #2E89C9;
+  background-color: var(--sub-color)
 }
 
 footer {
@@ -748,7 +754,7 @@ footer small {
   display: block;
   padding: 3rem 0 1rem;
   font-size: 0.75rem;
-  color: #e7e7e7;
+  color: var(--text-sm-color);
 }
 
 
@@ -799,9 +805,6 @@ footer small {
     height: 18rem;
   }
 
-  /* #miss-slider {
-    width: 250%;
-  } */
   #miss-slider a p {
     font-size: 1rem;
   }
@@ -860,7 +863,6 @@ footer small {
     width: 18rem;
   }
 
-  /* 네비게이션 메뉴 버튼으로 줄이기*/
   #navi-show {
     display: block;
   }
