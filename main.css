@@ -282,7 +282,6 @@ header::after {
 }
 
 #lnb .lv1>li {
-  line-height: 6rem;
   padding: 0;
   min-width: 15%;
 }
@@ -290,6 +289,12 @@ header::after {
 #lnb .lv1>li>a {
   font-size: 1.1rem;
   font-weight: 600;
+  display: block;
+  line-height: 6rem;
+  border-bottom: 0.2rem solid transparent;
+}
+#lnb .lv1>li:hover > a {
+  border-color: var(--main-color);
 }
 
 #lnb .lv2 {
@@ -299,7 +304,6 @@ header::after {
 #lnb .lv2>li {
   line-height: 3rem;
 }
-
 #lnb .lv2>li>a:hover {
   color: var(--sub-color);
 }
