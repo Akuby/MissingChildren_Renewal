@@ -290,7 +290,7 @@ header::after {
   font-size: 1.1rem;
   font-weight: 600;
   display: block;
-  line-height: 6rem;
+  line-height: 5.8rem;
   border-bottom: 0.2rem solid transparent;
 }
 #lnb .lv1>li:hover > a {
