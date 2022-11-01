@@ -105,7 +105,6 @@ $(document).ready(function () {
         $('header').removeClass('min');
       });
     } else { // 열기
-      $(this).css({position: 'fixed'})
       $('header').addClass('min');
       $('#lnb, #gnb').hide().fadeIn(200);
     }

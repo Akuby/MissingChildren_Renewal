@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실종아동전문센터 | 실종아동 및 장애인을 가족의 품으로</title>
+  <!-- og -->
+  <meta property="og:title" content="실종아동전문센터">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="실종아동 및 장애인 발생을 최소화하고 그 가족들의 회복을 돕는데 늘 최선을 다하겠습니다.">
+  <meta property="og:image" content="">
+
+  <!-- Main css -->
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/sub.css">
+
+  <!-- Main js -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="./js/main.js" defer></script>
+  <script src="./js/sub.js" defer></script>
+  <script src="./js/data.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 id="logo"><a href="/"><img id="logo-img" src="./assets/logo.png" alt="실종전문센터 로고"></a></h1>
+    <button id="navi-show"><span class="inline-hidden">메뉴</span></button>
+    <nav id="gnb">
+      <h2 class="hidden">로그인 및 언어변경 메뉴</h2>
+      <a href="#">로그인</a>
+      <a href="#">English</a>
+    </nav>
+    <nav id="lnb">
+      <h2 class="hidden">실종 아동 및 장애인 찾기 및 사이트 메인메뉴</h2>
+      <ul class="lv1">
+        <li><a href="#">실종아동/장애인 찾기</a>
+          <ul class="lv2">
+            <li><a href="#">우리아이찾기가이드</a></li>
+            <li><a href="#">실종아동/장애인 검색</a></li>
+            <li><a href="#">제보하기</a></li>
+            <li><a href="#">실종가족전용</a></li>
+          </ul>
+        </li>
+        <li><a href="#">실종지원정책</a>
+          <ul class="lv2">
+            <li><a href="#">실종아동 사진홍보</a></li>
+            <li><a href="#">실종예방활동</a></li>
+            <li><a href="#">협력기관</a></li>
+          </ul>
+        </li>
+        <li><a href="#">정보마당</a>
+          <ul class="lv2">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">기관소식</a></li>
+            <li><a href="#">보도자료</a></li>
+          </ul>
+        </li>
+        <li><a href="#">기관소개</a>
+          <ul class="lv2">
+            <li><a href="#">사업 소개</a></li>
+            <li><a href="#">기관 연혁</a></li>
+            <li><a href="#">기관 조직도</a></li>
+            <li><a href="#">찾아오시는 길</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="page-layout">
+    <div class="main-title">
+      <h3>실종아동 및 장애인 검색</h3>
+      <p>몇 가지 키워드를 통해 실종자 관련 정보를 확인하실 수 있습니다</p>
+    </div>
+    <nav class="sub-navi">
+      <li><span>실종아동/장애인 찾기</span>
+        <ul>
+          <li><a href="#">우리아이찾기가이드</a></li>
+          <li class="navi-active"><a href="#">실종아동/장애인 검색</a></li>
+          <li><a href="#">제보하기</a></li>
+          <li><a href="#">실종가족전용</a></li>
+        </ul>
+      </li>
+    </nav>
+    <main>
+      <section class="search-options">
+        <div>
+          <label for="name" class="option-title">실종자 성함</label><input type="text" id="name" placeholder="성함을 입력하세요">
+        </div>
+        <div>
+          <span class="option-title">성별</span>
+          <div class="options-radio-group">
+            <label for="gender-men">남성</label><input name="gender" type="radio" id="gender-men">
+            <label for="gender-women">여성</label><input name="gender" type="radio" id="gender-women">
+          </div>
+        </div>
+        <div>
+          <label for="location" class="option-title">실종지역</label>
+          <select name="location" id="location">
+            <option value="Sl">서울특별시</option>
+            <option value="Ic">인천광역시</option>
+            <option value="Dj">대전광역시</option>
+            <option value="Sj">세종특별자치시</option>
+            <option value="Gj">광주광역시</option>
+            <option value="Dg">대구광역시</option>
+            <option value="Us">울산광역시</option>
+            <option value="Bs">부산광역시</option>
+            <option value="Kg">경기도</option>
+            <option value="Kw">강원도</option>
+            <option value="Cb">충청북도</option>
+            <option value="Cn">충청남도</option>
+            <option value="Jb">전라북도</option>
+            <option value="Jn">전라남도</option>
+            <option value="Kb">경상북도</option>
+            <option value="Kn">경상남도</option>
+            <option value="Jj">제주특별자치도</option>
+          </select>
+        </div>
+        <div>
+          <span class="option-title">장애유무</span>
+          <div class="options-radio-group">
+            <label for="all">전체</label><input name="disable" type="radio" id="all">
+            <label for="disabled">장애</label><input name="disable" type="radio" id="disabled">
+            <label for="non-disabled">비장애</label><input name="disable" type="radio" id="non-disabled">
+          </div>
+        </div>
+        <div><label for="date" class="option-title">실종시기</label><input id="date"></div>
+        <div>
+          <label for="keyword" class="option-title">키워드 검색</label>
+          <input type="text" id="keyword" placeholder="인상착의 및 신체 특징 등">
+        </div>
+        <div class="options-btn-group">
+          <button id="doSearch">검색하기</button>
+          <button id="resetSearch">검색 초기화</button>
+        </div>
+      </section>
+      <section class="search-results">
+        <article>
+          <a href="#">
+            <div class="person-image"></div>
+            <div class="person-info">
+              <span class="info-name">홍길동 (남, 36세)</span>
+              <span class="info-disable">장애유무 | 장애인</span>
+              <span class="info-date">실종일자 | 2022-01-02</span>
+              <span class="info-location">실종지역 | 대구광역시</span>
+            </div>
+          </a>
+        </article>
+        <article>
+          <a href="#">
+            <div class="person-image"></div>
+            <div class="person-info">
+              <span class="info-name">이민기 (여, 29세)</span>
+              <span class="info-disable">장애유무 | 비장애인</span>
+              <span class="info-date">실종일자 | 2022-12-02</span>
+              <span class="info-location">실종지역 | 서울특별시</span>
+            </div>
+          </a>
+        </article>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="#">이용안내</a></li>
+      <li><a href="#">이메일무단수집거부</a></li>
+      <li><a href="#">개인정보처리방침 </a></li>
+    </ul>
+    <address><span>서울특별시 종로구 삼봉로 71 G타워 6층</span><span>TEL : 02-777-0182</span><span>FAX : 02-6283-0698</span><span>시스템
+        문의 : 070-7487-0010</span></address>
+    <small>COPYRIGHT NATIONAL CENTER FOR MISSING CHIDREN ALL RIGHTS RESERVED</small>
+  </footer>
+</body>
+
+</html>

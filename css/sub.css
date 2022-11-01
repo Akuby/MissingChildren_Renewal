@@ -1,0 +1,252 @@
+:root {
+  --main-color: #0055b2;
+  --sub-color: #2e89c9;
+  --text-sm-color: #e7e7e7;
+  --sub-bg-color: #f1f4f8;
+}
+
+.search-options input:focus,
+#date:focus-visible {
+  outline-color: var(--sub-color);
+}
+
+
+body {
+  background-color: #fff;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) repeat(4, 1fr);
+  grid-template-rows: 17.5rem 2fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.main-title {
+  grid-area: 1 / 1 / 2 / 6;
+  margin-top: 6rem;
+  width: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("../assets/main-title-bg.jpg");
+  background-position: center, 0 25rem;
+  background-size: cover;
+  background-repeat: no-repeat repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-title>h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.main-title>p {
+  color: var(--sub-color);
+  font-weight: 500;
+}
+
+.sub-navi {
+  grid-area: 2 / 1 / 3 / 2;
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+}
+
+.sub-navi>li span {
+  display: inline-block;
+  width: 100%;
+  line-height: 5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--sub-bg-color);
+}
+
+.sub-navi>li>ul {
+  padding: 0.5rem;
+}
+
+.sub-navi>li>ul>li {
+  margin: 1.4rem 0;
+}
+
+.sub-navi>li>ul>li.navi-active a {
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+  position: relative;
+}
+
+.sub-navi>li>ul>li.navi-active a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid var(--sub-color);
+}
+
+main {
+  grid-area: 2 / 2 / 3 / 6;
+}
+
+.search-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 4rem;
+}
+
+.search-options>div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 200px;
+  margin: 0 2rem 2rem 0;
+}
+
+.search-options input[type="text"],
+#date,
+#location,
+.options-btn-group button {
+  padding: 0 1rem;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px 0px #00000014;
+}
+
+/* 자동완성 후 input 색상 지정 */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+.search-options .option-title {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.search-options .options-radio-group {
+  margin-top: 0.5rem;
+}
+
+.search-options .options-radio-group input[type="radio"] {
+  margin-right: 1rem;
+}
+
+.search-options .options-btn-group {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.search-options .options-btn-group button {
+  width: 15rem;
+  height: 4rem;
+  font-size: 1.25rem;
+  background-color: var(--sub-color);
+  color: #fff;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.search-options .options-btn-group button:last-child {
+  background-color: #fff;
+  color: #b5b5b5;
+}
+
+/* 검색결과란 */
+.search-results {
+  background-color: var(--sub-bg-color);
+  margin: 0;
+  padding: 0.5rem 0 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-results article a {
+  background-color: #fff;
+  display: flex;
+  padding: 1rem;
+  width: 25rem;
+  height: 12rem;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+/* 임시 */
+.person-image {
+  width: 35%;
+  background: no-repeat center / cover;
+}
+
+article:nth-child(1) .person-image {
+  background-image: url(../assets/missingperson/1.png);
+}
+
+article:nth-child(2) .person-image {
+  background-image: url(../assets/missingperson/2.png);
+}
+
+.person-info {
+  width: 60%;
+  margin-left: 5%;
+  padding-top: 1rem;
+}
+
+.person-info span {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.person-info .info-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 680px) {
+  .page-layout {
+    grid-template-rows: 17.5rem auto 2fr;
+  }
+
+  .main-title {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.85) 0%, rgba(46, 137, 201, 0.2) 100%)
+  }
+
+  .sub-navi {
+    grid-area: 2 / 1 / 3 / 6;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  main {
+    grid-area: 3 / 1 / 4 / 6;
+  }
+
+  .search-options .options-btn-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-options .options-btn-group button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .search-options .options-btn-group button:first-child {
+    order: 1;
+  }
+
+  .search-results article a {
+    width: 30rem;
+    height: 15rem;
+  }
+}
