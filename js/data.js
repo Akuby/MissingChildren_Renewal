@@ -195,9 +195,10 @@ const missingPeopleData = [{
   }
 ]
 
-function gatherInfo() {
+let name, gender, location, disable, date, keyword;
 
-}
+
+
 $('#doSearch').on('click', function () {
   // const resultCard = '<article><div class = "person-image"></div><div class = "person-info"><span class = "info-disable"></span><span class = "info-name" ></span><span class = "info-date"></span><span class = "info-location"></span><span class = "info-keyword"></span> </div></article>'
 

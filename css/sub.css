@@ -151,8 +151,8 @@ input:-webkit-autofill {
   color: #fff;
   cursor: pointer;
   margin: 0 0.5rem;
+  transition: box-shadow 0.3s;
 }
-
 .search-options .options-btn-group button:last-child {
   background-color: #fff;
   color: #b5b5b5;
@@ -208,7 +208,43 @@ article:nth-child(2) .person-image {
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
+/* 페이지네이션 */
+.pagination-container{
+  text-align: center;
+  width: 80%;
+  margin: 1rem auto;
+}
+.pagination-list {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.pagination-list li {
+  display: inline;
+  text-align: center;
+}
+.pagination-list a {
+  float: left;
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--sub-color);
+  font-size: 1.2rem
+}
+.first-page {
+  margin-right: 1rem;
+}
+.last-page {
+  margin-left: 1rem;
+}
+.left:hover, .right:hover {
+  color: var(--main-color);
+}
+.pagination-list a.active {
+  cursor: default;
+  color: #fff;
+  font-weight: 600;
+  background-color: var(--sub-color);
+  border-radius: 10px;
+}
 footer {
   margin-top: 0;
 }
@@ -248,5 +284,8 @@ footer {
   .search-results article a {
     width: 30rem;
     height: 15rem;
+  }
+  .pagination-list a {
+    font-size: 1.65rem
   }
 }
