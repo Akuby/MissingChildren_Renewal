@@ -195,17 +195,11 @@ const missingPeopleData = [{
   }
 ]
 
-let name, gender, location, disable, date, keyword;
-
-
-
-$('#doSearch').on('click', function () {
-  // const resultCard = '<article><div class = "person-image"></div><div class = "person-info"><span class = "info-disable"></span><span class = "info-name" ></span><span class = "info-date"></span><span class = "info-location"></span><span class = "info-keyword"></span> </div></article>'
-
-  //1. 검색 조건을 기반으로 json 데이터에서 필요한 부분만 가져와 새로운 배열을 생성한다.
-  //2. map 메소드로 하나씩 데이터를 뽑아 변수에 선언한다.
-  // 2-1. 
-  //3. 받아온 변수를 html 틀에 맞게 집에 넣는다.
-  //4. 완성된 html을 append한다.
-  //5. 2~4를 반복한다.
-})
+missingPeopleData.map(
+  (data) => {
+    let article = document.createElement('article');
+    article.setAttribute('id', data.id)
+    article.innerHTML = `<a href="#"><div class="person-image" style="background-image: url(../assets/missingperson/${data.id}.png)"></div><div class="person-info"><span class="info-name">${data.name} (${data.gender=='male'? '남' : '여'}, ${data.age}세)</span><span class="info-disable">장애유무 | ${data.isDisabled ? '장애인' : '비장애인'}</span><span class="info-date">실종일자 | ${data.missingDate}</span><span class="info-location">실종지역 | ${data.missingLoca}</span></div></a>`
+    $('.search-results').append(article)
+  }
+)

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  let resizeCount = 0
   let isMobile = 0;
   let missingperson = $('#miss-slider li').get();
   let cooperate = $('.coop-slider li a').get();
