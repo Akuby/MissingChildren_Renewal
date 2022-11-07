@@ -199,7 +199,7 @@ missingPeopleData.map(
   (data) => {
     let article = document.createElement('article');
     article.setAttribute('id', data.id)
-    article.innerHTML = `<a href="#"><div class="person-image" style="background-image: url(../assets/missingperson/${data.id}.png)"></div><div class="person-info"><span class="info-name">${data.name} (${data.gender=='male'? '남' : '여'}, ${data.age}세)</span><span class="info-disable">장애유무 | ${data.isDisabled ? '장애인' : '비장애인'}</span><span class="info-date">실종일자 | ${data.missingDate}</span><span class="info-location">실종지역 | ${data.missingLoca}</span></div></a>`
+    article.innerHTML = `<a href="#"><div class="person-image" style="background-image: url(./assets/missingperson/${data.id}.png)"></div><div class="person-info"><span class="info-name">${data.name} (${data.gender=='male'? '남' : '여'}, ${data.age}세)</span><span class="info-disable">장애유무 | ${data.isDisabled ? '장애인' : '비장애인'}</span><span class="info-date">실종일자 | ${data.missingDate}</span><span class="info-location">실종지역 | ${data.missingLoca}</span></div></a>`
     $('.search-results').append(article)
   }
 )
