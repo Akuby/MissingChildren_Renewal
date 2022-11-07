@@ -15,12 +15,8 @@ $(document).ready(function () {
   }
 
   function resize() {
-    if ($(window).innerWidth() <= 768) {
-      isMobile = 1;
-    } else {
-      isMobile = 0;
+    $(window).innerWidth() <= 768 ? isMobile = 1 : isMobile = 0;
     }
-  }
 
   if (isMobile == 0) {
     // 네비게이션 드롭다운

@@ -544,16 +544,27 @@ header::after {
 
 #miss-slider {
   width: 300%;
-  height: 19.5rem;
+  height: 22.5rem;
+  padding: 1rem;
+  padding-right: 0;
 }
 
 #miss-slider li {
   margin-right: 1rem;
   width: 10%;
-  height: 100%;
+  height: 90%;
   background: #818181 no-repeat top / cover;
   overflow: hidden;
+  transition: 0.5s;
 }
+
+@media (hover: hover) {
+	#miss-slider li:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
 
 #miss-slider a {
   display: block;
